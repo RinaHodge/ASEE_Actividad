@@ -34,3 +34,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: openapi_server
+          path: openapi_server.zip
