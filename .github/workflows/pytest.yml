@@ -1,0 +1,29 @@
+name: Pytest
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Paso 1
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Paso 2
+      - name: Instalar ultioma version de Python
+        uses: actions/setup-python@v4 
+        with:
+          python-version: 'latest'
+
+      # Paso 3
+      - name: Instalar dependencias 
+        run: pip install -r requirements.txt
+
+      # Paso 3
+      - name: Pruebas con Pytest
+        run: pytest
