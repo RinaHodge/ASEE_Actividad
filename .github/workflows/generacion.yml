@@ -3,7 +3,7 @@ name: Generacion
 on:
   push:
     branches:
-      - main
+      - Ejercicio3
 
 jobs:
   generar-codigo:
