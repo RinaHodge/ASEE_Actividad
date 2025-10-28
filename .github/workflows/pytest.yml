@@ -16,9 +16,9 @@ jobs:
 
       # Paso 2
       - name: Instalar ultioma version de Python
-        uses: actions/setup-python@v4 
+        uses: actions/setup-python@v4
         with:
-          python-version: 'latest'
+          python-version: '3.x'
 
       # Paso 3
       - name: Instalar dependencias 
