@@ -1,4 +1,4 @@
-name: Generacion
+name: Generar y Comprimir OpenAPI
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   generar-codigo:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
 
     steps:
       # Paso 1
@@ -26,11 +26,11 @@ jobs:
         run: java -jar openapi-generator-cli.jar generate -i api.yaml -g python-flask -o ./openapi_server
 
       # Paso 4
-      - name: Comprimir código generado
+      - name: Comprimir directorio openapi_server
         run: |
           zip -r openapi_server.zip openapi_server
 
-      # Paso 5
+      # Paso 5: Subir el archivo comprimido como un artefacto
       - name: Subir artefacto
         uses: actions/upload-artifact@v4
         with:
