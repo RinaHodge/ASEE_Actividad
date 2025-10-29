@@ -27,11 +27,12 @@ jobs:
 
       # Paso 4
       - name: Comprimir código generado
-        run: zip -r openapi_server.zip openapi_server
+        run: |
+          zip -r openapi_server.zip openapi_server
 
       # Paso 5
       - name: Subir artefacto
         uses: actions/upload-artifact@v4
         with:
-          name: openapi_server
+          name: openapi_server.zip
           path: openapi_server.zip
